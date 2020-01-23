@@ -14,13 +14,43 @@ npm install --save react-asker
 
 ```jsx
 import React, { Component } from 'react'
+import { asker, AskerView } from 'react-asker'
 
-import MyComponent from 'react-asker'
+export default class App extends Component {
+  confirm = () => {
+    asker.confirm({
+      title: "Do you really want delete this element?",
+      onAccept: () => console.log("Deleted!"),
+      acceptCaption: "yes",
+      cancelCaption: "no",
+    });
+  }
 
-class Example extends Component {
+  prompt = () => {
+    asker.prompt({
+      title: "Type new name",
+      defaultValue: "Henry",
+      onAccept: name => console.log(`Changed name to ${name}!`),
+      acceptCaption: "yes",
+      cancelCaption: "no",
+    });
+  }
+
+  componentDidMount() {
+    asker.close();
+  }
+
+  componentWillUnmount() {
+    asker.close();
+  }
+
   render () {
     return (
-      <MyComponent />
+      <div>
+        <AskerView zIndex={1000} />
+        <div onClick={this.confirm}>CONFIRM</div>
+        <div onClick={this.prompt}>PROMPT</div>
+      </div>
     )
   }
 }

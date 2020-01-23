@@ -1,0 +1,42 @@
+/* add css styles here (optional) */
+
+.modal {
+  position: fixed;
+  top: 50vh;
+  left: 50vw;
+  width: 400px;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background-color: lightgrey;
+  border: 5px solid grey;
+}
+
+.modal__title {
+  font-weight: bold;
+
+}
+
+.modal__content {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal__description {
+
+}
+
+.modal__input {
+
+}
+
+.modal__buttons {
+
+}
+
+.modal__accept-button {
+
+}
+
+.modal__cancel-button {
+
+}
